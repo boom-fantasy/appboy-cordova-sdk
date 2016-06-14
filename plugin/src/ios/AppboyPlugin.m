@@ -15,22 +15,7 @@
 
 - (void)didFinishLaunchingListener:(NSNotification *)notification {
   // TODO - pass api key as paramter
-   [Appboy startWithApiKey:self.APIKey
-            inApplication:notification.object
-        withLaunchOptions:notification.userInfo
-        withAppboyOptions:nil];
-
-     // TODO - take param to optionally swith off push registration
-   if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
-    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
-     (UIRemoteNotificationTypeAlert |
-      UIRemoteNotificationTypeBadge |
-      UIRemoteNotificationTypeSound)];
-   } else {
-     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge|UIUserNotificationTypeAlert | UIUserNotificationTypeSound) categories:nil];
-     [[UIApplication sharedApplication] registerForRemoteNotifications];
-     [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
-    }
+  
 }
 
 /*-------Appboy.h-------*/
